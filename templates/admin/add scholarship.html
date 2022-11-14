@@ -1,0 +1,35 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addscholar1">
+  <table width="200" border="1" class="table " bgcolor="#b8e0d2">
+    <tr>
+      <td>scholarship</td>
+      <td><label>
+        <input type="text" name="textfield" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>amount</td>
+      <td><label>
+      <input type="text" name="textfield2" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>details</td>
+      <td>
+        <textarea name="textarea" required rows="6" ></textarea>
+     </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

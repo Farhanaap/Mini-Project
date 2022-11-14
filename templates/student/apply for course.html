@@ -1,0 +1,32 @@
+{% extends 'student/studentindex.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="200" border="1" class="table" bgcolor="#b8e0d2">
+    <tbody>
+      <tr>
+        <td>#</td>
+        <td>course</td>
+        <td>fees</td>
+        <td>duration</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;{{loop.index }}</td>
+        <td>{{i['course']}}</td>
+        <td>&nbsp;{{i['fee']}}</td>
+        <td>&nbsp;{{i['duration']}}</td>
+        {% if i[status]=='confirm'%}
+        <td>confirmed</td>
+        {% else %}
+        <td><a href="applycourse1?id={{i['cid']}}">apply</a> </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}

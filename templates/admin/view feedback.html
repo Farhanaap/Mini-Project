@@ -1,0 +1,26 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form>
+  <table width="200" border="1" class="table "bgcolor="#b8e0d2">
+    <tbody>
+      <tr>
+        <td>#</td>
+        <td>studentname</td>
+        <td>date</td>
+        <td>feedback</td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;{{loop.index}}</td>
+        <td>&nbsp;{{i['fname']}}{{i['lname']}}</td>
+        <td>&nbsp;{{i['date']}}</td>
+        <td>{{i['feedback']}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}

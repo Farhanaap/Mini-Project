@@ -1,0 +1,37 @@
+{% extends 'staff/staffindex.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="200" border="1" class="table" bgcolor="#b8e0d2">
+    <tbody>
+
+      <tr>
+        <td>#</td>
+        <td>name</td>
+        <td>COURES</td>
+        <td>fee</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in vl %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}{{i['lname']}}</td>
+        <td>&nbsp;{{i['course']}}</td>
+        <td>&nbsp;{{i['fee']}}</td>
+        {% if i['status']=='confirm'%}
+        <td>approved</td>
+        {% elif i['status']=='rejected' %}
+        <td>rejected</td>
+        {% else %}
+        <td><p><a href="acceptreuest?id={{i['id']}}">accept</a></p>
+        <p><a href="rejectreuest?id={{i['id']}}">reject</a></p>
+        </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}

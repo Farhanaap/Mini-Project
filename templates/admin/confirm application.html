@@ -1,0 +1,32 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="200" border="1" class="table " bgcolor="#b8e0d2">
+    <tbody>
+      <tr>
+        <td>#</td>
+        <td>studentname</td>
+        <td>date</td>
+        <td>application</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val %}
+
+      <tr>
+        <td>{{loop.index }}</td>
+        <td>{{i['fname']}}{{i['lname']}}</td>
+        <td>{{i['date']}}</td>
+        <td>{{i['scholarship']}}</td>
+        <td>{% if i['status']=='forwarded' %}<a href="confirmapplication1?id={{i['id']}}">confirm</a><br>
+			<a href="confirmapplication2?id={{i[id]}}">reject</a>  {% elif i['status']=='reject' %}rejected
+          {% else %} confirmed {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+<p>&nbsp;</p>
+</body>
+{% endblock %}

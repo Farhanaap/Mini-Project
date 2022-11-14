@@ -1,0 +1,28 @@
+{% extends 'staff/staffindex.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post">
+  <table width="200" border="1" class="table" bgcolor="#b8e0d2">
+    <tbody>
+      <tr>
+        <td>#</td>
+        <td>name</td>
+        <td>scholarship</td>
+        <td>date</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}{{i['lname']}}</td>
+        <td>&nbsp;{{i['scholarship']}}</td>
+        <td>&nbsp;{{i['date']}}</td>
+        <td><a href="forwardtoadmin1?id={{i['id']}}">forward</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}

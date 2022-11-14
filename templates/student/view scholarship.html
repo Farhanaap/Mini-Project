@@ -1,0 +1,26 @@
+{% extends 'student/studentindex.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post"><li><table width="200" border="1" class="table" bgcolor="#b8e0d2">
+  <tbody>
+    <tr>
+      <td>#</td>
+      <td>scholarship</td>
+      <td>amount</td>
+      <td>details</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{loop.index }}</td>
+      <td>{{i['scholarship']}}</td>
+      <td>&nbsp;{{i['amount']}}</td>
+      <td>{{i['details']}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</li>
+</form>
+</body>
+{% endblock %}

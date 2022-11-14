@@ -1,0 +1,40 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addcourse">
+  <table width="200" border="1" class="table " bgcolor="#b8e0d2">
+    <tbody>
+      <tr>
+        <td>#</td>
+        <td>course</td>
+        <td>fee</td>
+        <td>duration</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{i['course']}}</td>
+        <td>&nbsp;{{i['fee']}}</td>
+        <td>{{i['duration']}}</td>
+        <td><p><a href="editcourse?id={{i['cid']}}">edit</a></p>
+        <p><a href="deletecourse?id={{i['cid']}}">delete</a></p></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="5" align="center"><blockquote>
+          <blockquote>
+            <blockquote>
+              <p>
+                <input type="submit" name="submit" id="submit" value="add">
+              </p>
+            </blockquote>
+          </blockquote>
+        </blockquote></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}
